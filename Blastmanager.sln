@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blastmanager", "Blastmanager\Blastmanager.csproj", "{EF3F3353-102F-46D5-B5CC-8DCB53ECE7B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blastmanager.Contractor", "Blastmanager.Contractor\Blastmanager.Contractor.csproj", "{8588E78C-350B-4C38-96A2-DE6573987999}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF3F3353-102F-46D5-B5CC-8DCB53ECE7B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF3F3353-102F-46D5-B5CC-8DCB53ECE7B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF3F3353-102F-46D5-B5CC-8DCB53ECE7B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF3F3353-102F-46D5-B5CC-8DCB53ECE7B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8588E78C-350B-4C38-96A2-DE6573987999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8588E78C-350B-4C38-96A2-DE6573987999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8588E78C-350B-4C38-96A2-DE6573987999}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8588E78C-350B-4C38-96A2-DE6573987999}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
