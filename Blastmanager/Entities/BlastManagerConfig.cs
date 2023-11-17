@@ -9,7 +9,7 @@ public record BlastManagerConfig
         this.Proxy = proxy;
     }
 
-    public string Username { get; init; }
-    public string Password { get; init; }
-    public string Proxy { get; init; }
+    public required string Username { get; init; }
+    public required string Password { get; init; }
+    public string? Proxy { get; init; }
 }
