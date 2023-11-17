@@ -12,12 +12,12 @@ public static class BlastClientHostBuilder
         var clients = Assembly.GetEntryAssembly()?.GetTypes()
                 .Where(x => x.IsClass && typeof(IRegister).IsAssignableFrom(x))
                 .ToArray();
+        
         if (clients is null) throw new NullReferenceException("No clients found. Please install a client package");
         for (var i = 0; i < clients.Length; i++)
         {
             var x = clients[i];
-
-            x.GetMethod("Register")?.Invoke(new object(), new object[] { });
+            x.GetMethod("Register")?.Invoke(new (), new object[] { builder, configure });
         }
     }
 }
