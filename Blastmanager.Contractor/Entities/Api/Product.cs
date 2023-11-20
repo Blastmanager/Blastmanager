@@ -3,7 +3,7 @@
 /// <summary>
 /// 
 /// </summary>
-public abstract class Product
+public class Product
 {
     /// <summary>
     /// 

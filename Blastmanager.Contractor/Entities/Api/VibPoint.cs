@@ -1,6 +1,6 @@
 ﻿namespace Blastmanager.Contractor.Entities.Api;
 
-public abstract class VibPoint : Coordinate
+public class VibPoint : Coordinate
 {
     /// <summary>
     /// Identifier for measurement point

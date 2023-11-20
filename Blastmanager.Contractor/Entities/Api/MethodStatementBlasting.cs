@@ -3,7 +3,7 @@
 /// <summary>
 /// 
 /// </summary>
-public abstract class MethodStatementBlasting
+public class MethodStatementBlasting
 {
     /// <summary>
     /// Identifier

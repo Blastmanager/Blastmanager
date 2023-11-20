@@ -1,6 +1,6 @@
 ﻿namespace Blastmanager.Contractor.Entities.Api;
 
-public abstract class VibValue
+public class VibValue
 {
     /// <summary>
     /// Reference to <see cref="VibPoint.Id" />

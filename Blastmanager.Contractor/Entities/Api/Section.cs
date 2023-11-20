@@ -3,7 +3,7 @@
 /// <summary>
 /// 
 /// </summary>
-public abstract class Section
+public class Section
 {
     /// <summary>
     /// Type - Section/Element. Example: Outline, emergency room etc

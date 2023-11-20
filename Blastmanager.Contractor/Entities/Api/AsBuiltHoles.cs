@@ -1,6 +1,6 @@
 ﻿namespace Blastmanager.Contractor.Entities.Api;
 
-public abstract class AsBuiltHoles
+public class AsBuiltHoles
 {
     public int Id { get; init; }
     public DateTime StartTime { get; init; }
