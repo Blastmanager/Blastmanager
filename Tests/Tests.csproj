@@ -23,7 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Blastmanager.Contractor\Blastmanager.Contractor.csproj" />
+        <ProjectReference Include="..\Blastmanager.Contractor\Blastmanager.Contractor.csproj"/>
     </ItemGroup>
 
 </Project>

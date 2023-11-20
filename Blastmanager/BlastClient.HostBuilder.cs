@@ -2,7 +2,6 @@
 using Blastmanager.Entities;
 using Blastmanager.Entities.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
 namespace Blastmanager;
 
@@ -15,8 +14,8 @@ public static class BlastClientHostBuilder
         for (var i = 0; i < types.Length; i++)
         {
             var x = types[i];
-            if(x.Name is not null && !x.Name.StartsWith("Blastmanager.")) continue;
-            var assembly = Assembly.Load(x); 
+            if (x.Name is not null && !x.Name.StartsWith("Blastmanager.")) continue;
+            var assembly = Assembly.Load(x);
             var client = assembly.GetTypes()
                     .Where(type => type.IsClass && typeof(IRegister).IsAssignableFrom(type))
                     .ToArray();

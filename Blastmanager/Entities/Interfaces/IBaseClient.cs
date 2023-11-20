@@ -1,3 +1,5 @@
 ﻿namespace Blastmanager.Entities.Interfaces;
 
-public interface IBaseClient { }
+public interface IBaseClient
+{
+}

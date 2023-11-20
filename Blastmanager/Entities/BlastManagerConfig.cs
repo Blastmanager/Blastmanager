@@ -6,9 +6,9 @@ public record BlastManagerConfig
 {
     protected BlastManagerConfig(string username, string password, string proxy = null!)
     {
-        this.Username = username;
-        this.Password = password;
-        this.Proxy = proxy;
+        Username = username;
+        Password = password;
+        Proxy = proxy;
     }
 
     public required string Username { get; set; }

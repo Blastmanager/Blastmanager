@@ -12,7 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Blastmanager.Contractor\Blastmanager.Contractor.csproj" />
-      <ProjectReference Include="..\Blastmanager\Blastmanager.csproj" />
+        <ProjectReference Include="..\Blastmanager.Contractor\Blastmanager.Contractor.csproj"/>
+        <ProjectReference Include="..\Blastmanager\Blastmanager.csproj"/>
     </ItemGroup>
 </Project>

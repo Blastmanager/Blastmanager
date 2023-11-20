@@ -3,26 +3,26 @@
 internal class Json
 {
     internal const string GetMisfireJSON = """
-                                          [
-                                              {
-                                                  "Id": 1,
-                                                  "TimestampCreated": "2022-01-01T01:01:01.001",
-                                                  "TimestampLastChanged": "2022-01-01T01:01:01.001",
-                                                  "TimestampFound": "2022-01-01T01:01:01.001",
-                                                  "ProjectId": 1,
-                                                  "ProjectNumber": "1",
-                                                  "ProjectName": "string",
-                                                  "StatusId": 1,
-                                                  "Status": "Aktiv",
-                                                  "BlastId": 1,
-                                                  "AmountExplosives": 1.0,
-                                                  "AmountDetonators": null,
-                                                  "AmountCords": null,
-                                                  "AmountPrimers": null,
-                                                  "Source": "string"
-                                              }
-                                          ]
-                                          """;
+                                           [
+                                               {
+                                                   "Id": 1,
+                                                   "TimestampCreated": "2022-01-01T01:01:01.001",
+                                                   "TimestampLastChanged": "2022-01-01T01:01:01.001",
+                                                   "TimestampFound": "2022-01-01T01:01:01.001",
+                                                   "ProjectId": 1,
+                                                   "ProjectNumber": "1",
+                                                   "ProjectName": "string",
+                                                   "StatusId": 1,
+                                                   "Status": "Aktiv",
+                                                   "BlastId": 1,
+                                                   "AmountExplosives": 1.0,
+                                                   "AmountDetonators": null,
+                                                   "AmountCords": null,
+                                                   "AmountPrimers": null,
+                                                   "Source": "string"
+                                               }
+                                           ]
+                                           """;
 
     internal const string GetBlastJSON = """
                                          [    {
