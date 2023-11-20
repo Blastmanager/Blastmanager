@@ -20,4 +20,3 @@ var scope = host.Services.CreateScope();
 var client = scope.ServiceProvider.GetRequiredService<IContractorClient>();
 // Retrieve projects
 var projects = await client.GetProjectsAsync(true);
-Console.ReadKey();
