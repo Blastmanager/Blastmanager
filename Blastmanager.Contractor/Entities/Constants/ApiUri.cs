@@ -1,8 +1,8 @@
 ﻿namespace Blastmanager.Contractor.Entities.Constants;
 
-internal class ApiUri
+internal static class ApiUri
 {
-    public const string BaseUri = "";
+    public const string BaseUri = "https://external.blastmanager.no/";
 
     public const string GetProjects = "api/contractor/GetProjects";
     public const string GetBlastReportsByBlastDate = "api/contractor/GetBlastReportsByBlastDate";
