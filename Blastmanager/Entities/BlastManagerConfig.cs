@@ -11,8 +11,8 @@ public record BlastManagerConfig
         Proxy = proxy;
     }
 
-    public required string Username { get; set; }
-    public required string Password { get; set; }
+    public string Username { get; set; }
+    public string Password { get; set; }
     public string? Proxy { get; init; }
     public ServiceLifetime ServiceLifetime { get; set; } = ServiceLifetime.Scoped;
 }

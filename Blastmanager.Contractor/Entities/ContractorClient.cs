@@ -1,4 +1,4 @@
-﻿using System.Net.Http.Json;
+﻿using System.Text.Json;
 using Blastmanager.Contractor.Entities.Constants;
 using Blastmanager.Contractor.Entities.Interfaces;
 using Blastmanager.Contractor.Entities.Response;
@@ -23,8 +23,8 @@ public class ContractorClient(IOptions<ContractorOption> options,
     {
         var response = await _client.GetAsync($"{ApiUri.GetProjects}?onlyActive={onlyActive}", cancellationToken);
         response.EnsureSuccessStatusCode();
-        var value =
-                await response.Content.ReadFromJsonAsync<GetProjectsResponse[]>(cancellationToken);
+        var value = JsonSerializer.Deserialize<GetProjectsResponse[]>(
+                await response.Content.ReadAsStringAsync(cancellationToken));
         return value!;
     }
 
@@ -37,8 +37,9 @@ public class ContractorClient(IOptions<ContractorOption> options,
                                               $"?from={from:YYYY-MM-DDTHH:mm:ss}&to={to:YYYY-MM-DDTHH:mm:ss}",
                 cancellationToken);
         response.EnsureSuccessStatusCode();
-        var value =
-                await response.Content.ReadFromJsonAsync<BlastReportsResponse[]>(cancellationToken);
+        await response.Content.ReadAsStringAsync(cancellationToken);
+        var value = JsonSerializer.Deserialize<BlastReportsResponse[]>(
+                        await response.Content.ReadAsStringAsync(cancellationToken));
         return value!;
     }
 
@@ -51,8 +52,8 @@ public class ContractorClient(IOptions<ContractorOption> options,
                                               $"?from={from:YYYY-MM-DDTHH:mm:ss}&to={to:YYYY-MM-DDTHH:mm:ss}",
                 cancellationToken);
         response.EnsureSuccessStatusCode();
-        var value =
-                await response.Content.ReadFromJsonAsync<BlastReportsResponse[]>(cancellationToken);
+        var value =JsonSerializer.Deserialize<BlastReportsResponse[]>(
+                        await response.Content.ReadAsStringAsync(cancellationToken));
         return value!;
     }
 
@@ -65,9 +66,9 @@ public class ContractorClient(IOptions<ContractorOption> options,
                                               $"?from={from:YYYY-MM-DDTHH:mm:ss}&to={to:YYYY-MM-DDTHH:mm:ss}",
                 cancellationToken);
         response.EnsureSuccessStatusCode();
-        var value =
-                await response.Content.ReadFromJsonAsync<GetMisfireResponse[]>(
-                        cancellationToken);
+        
+        var value = JsonSerializer.Deserialize<GetMisfireResponse[]>(
+                        await response.Content.ReadAsStringAsync(cancellationToken));
         return value!;
     }
 
@@ -80,9 +81,8 @@ public class ContractorClient(IOptions<ContractorOption> options,
                                               $"?from={from:YYYY-MM-DDTHH:mm:ss}&to={to:YYYY-MM-DDTHH:mm:ss}",
                 cancellationToken);
         response.EnsureSuccessStatusCode();
-        var value =
-                await response.Content.ReadFromJsonAsync<GetMisfireResponse[]>(
-                        cancellationToken);
+        var value = JsonSerializer.Deserialize<GetMisfireResponse[]>(
+                        await response.Content.ReadAsStringAsync(cancellationToken));
         return value!;
     }
 }
