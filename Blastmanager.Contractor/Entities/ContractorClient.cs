@@ -8,12 +8,12 @@ using Microsoft.Extensions.Options;
 namespace Blastmanager.Contractor.Entities;
 
 /// <inheritdoc />
-public abstract class ContractorClient(IOptions<ContractorOption> options,
-                IHttpClientFactory factory,
+public class ContractorClient(IOptions<ContractorOption> options,
+                HttpClient client,
                 ILogger<ContractorClient> logger)
         : IContractorClient
 {
-    private readonly HttpClient _client = factory.CreateClient();
+    private readonly HttpClient _client = client;
     private readonly ILogger<ContractorClient> _logger = logger;
     private readonly IOptions<ContractorOption> _options = options;
 

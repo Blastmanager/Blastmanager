@@ -1,4 +1,6 @@
-﻿namespace Blastmanager.Entities;
+﻿using Microsoft.Extensions.DependencyInjection;
+
+namespace Blastmanager.Entities;
 
 public record BlastManagerConfig
 {
@@ -9,7 +11,8 @@ public record BlastManagerConfig
         this.Proxy = proxy;
     }
 
-    public required string Username { get; init; }
-    public required string Password { get; init; }
+    public required string Username { get; set; }
+    public required string Password { get; set; }
     public string? Proxy { get; init; }
+    public ServiceLifetime ServiceLifetime { get; set; } = ServiceLifetime.Scoped;
 }
