@@ -7,6 +7,13 @@ namespace Blastmanager;
 
 public static class BlastClientHostBuilder
 {
+    /// <summary>
+    /// Configure BlastManager and all installed clients
+    /// </summary>
+    /// <param name="builder"></param>
+    /// <param name="configure"></param>
+    /// <exception cref="NullReferenceException">When no clients have been installed,
+    /// or there's no referenced assemblies</exception>
     public static void AddBlastManager(this IServiceCollection builder, Action<BlastManagerConfig> configure)
     {
         var types = Assembly.GetEntryAssembly()?.GetReferencedAssemblies();
@@ -22,8 +29,7 @@ public static class BlastClientHostBuilder
             for (var j = 0; j < client.Length; j++)
             {
                 var type = client[j];
-                type
-                        .GetMethod("Register")
+                type.GetMethod("Register")
                         ?.Invoke(Activator.CreateInstance(type), new object[] { builder, configure });
             }
         }

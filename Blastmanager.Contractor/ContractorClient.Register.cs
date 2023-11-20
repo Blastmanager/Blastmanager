@@ -8,8 +8,14 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Blastmanager.Contractor;
 
-public class ContractorClientRegister : IRegister
+public sealed class ContractorClientRegister : IRegister
 {
+    /// <summary>
+    /// Register the Contractor Client
+    /// </summary>
+    /// <param name="builder"></param>
+    /// <param name="configure"></param>
+    /// <exception cref="ArgumentOutOfRangeException"></exception>
     public void Register(IServiceCollection builder, Action<BlastManagerConfig> configure)
     {
         var cfg = new ContractorOption
