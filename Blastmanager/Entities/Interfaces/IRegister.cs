@@ -1,8 +1,8 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace Blastmanager.Entities.Interfaces;
 
 public interface IRegister
 {
-    void Register(IHostBuilder builder, Action<BlastManagerConfig> configure);
+    void Register(IServiceCollection builder, Action<BlastManagerConfig> configure);
 }
