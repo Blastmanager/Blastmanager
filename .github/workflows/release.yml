@@ -1,9 +1,9 @@
 name: Release to NuGet
 
 on:
-  release:
-    branches: [dev]
-    types: [published]
+  push:
+    branches:
+    - dev
     
 jobs:
   build:
@@ -21,5 +21,5 @@ jobs:
     - name: Pack nugets
       run: dotnet pack -c Release --no-build --output .
     - name: Push to NuGet
-      run: dotnet nuget push "*.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/blastmanager/index.json"
+      run: dotnet nuget push "*.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source https://nuget.pkg.github.com/blastmanager/index.json
      # run: dotnet nuget push "*.nupkg" --api-key ${{secrets.nuget_api_key}} --source https://api.nuget.org/v3/index.json
