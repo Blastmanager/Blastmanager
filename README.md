@@ -3,7 +3,8 @@ Package for public APIs
 
 ## Install
 ```
-Package here
+dotnet add package Blastmanager
+dotnet add package Blastmanager.Contractor
 ```
 
 ## Setup

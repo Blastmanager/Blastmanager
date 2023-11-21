@@ -1,9 +1,9 @@
-name: Release to Github
+name: Release to NuGet
 
 on:
   push:
     branches:
-    - dev
+    - main
 
 jobs:
   build:
@@ -19,11 +19,13 @@ jobs:
       uses: PaulHatch/semantic-version@v5.3.0
       with:
         tag_prefix: ""
+        version_from_branch: true
     - name: Setup .NET SDK
       uses: actions/setup-dotnet@v1
     - name: Build
       run: dotnet build -c Release -p:Version=${VERSION}
       env:
+        DOTNET_CLI_TELEMETRY_OPTOUT: 1
         VERSION: ${{ steps.version.outputs.version }}.${{ steps.version.outputs.increment }}
     - name: Test
       run: dotnet test -c Release --no-build
@@ -36,4 +38,4 @@ jobs:
     - name: Git Semantic Version
       uses: PaulHatch/semantic-version@v5.3.0
     - name: Push to NuGet
-      run: dotnet nuget push "*.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source https://nuget.pkg.github.com/blastmanager/index.json
+      run: dotnet nuget push "*.nupkg" --api-key ${{secrets.nuget_api_key}} --source https://api.nuget.org/v3/index.json
