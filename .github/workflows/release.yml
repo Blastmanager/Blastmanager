@@ -22,11 +22,11 @@ jobs:
     - name: Setup .NET SDK
       uses: actions/setup-dotnet@v1
     - name: Build
-      run: dotnet build -c -p:Version=${VERSION} Release
+      run: dotnet build -c Release -p:Version=${VERSION}
       env:
         VERSION: ${{ steps.version.outputs.version }}.${{ steps.version.outputs.increment }}
     - name: Test
-      run: dotnet test -c Release -p:Version=${VERSION} --no-build
+      run: dotnet test -c Release --no-build
     - name: Pack nugets
       run: dotnet pack -p:PackageVersion=${PACKAGE_VERSION} -c Release --no-build --output .
       env:
