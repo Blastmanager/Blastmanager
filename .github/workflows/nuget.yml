@@ -35,6 +35,6 @@ jobs:
         DOTNET_CLI_TELEMETRY_OPTOUT: 1
         PACKAGE_VERSION: ${{ steps.version.outputs.version }}
     - name: Push to NuGet
-      run: dotnet nuget push "*.nupkg" -k ${NUGET_KEY} -s https://api.nuget.org/v3/index.json
+      run: dotnet nuget push "*.nupkg" -k sdfgsdf -s https://api.nuget.org/v3/index.json
       env:
         NUGET_KEY: ${{ secrets.NUGET_KEY }}
