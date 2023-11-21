@@ -22,16 +22,18 @@ jobs:
     - name: Setup .NET SDK
       uses: actions/setup-dotnet@v1
     - name: Build
-      run: dotnet build -c Release
+      run: dotnet build -c -p:Version=${VERSION} Release
+      env:
+        VERSION: ${{ steps.version.outputs.version }}.${{ steps.version.outputs.increment }}
     - name: Test
       run: dotnet test -c Release -p:Version=${VERSION} --no-build
     - name: Pack nugets
       run: dotnet pack -p:PackageVersion=${PACKAGE_VERSION} -c Release --no-build --output .
+      env:
+        DOTNET_CLI_TELEMETRY_OPTOUT: 1
+        PACKAGE_VERSION: ${{ steps.version.outputs.version }}
+
     - name: Git Semantic Version
       uses: PaulHatch/semantic-version@v5.3.0
     - name: Push to NuGet
       run: dotnet nuget push "*.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source https://nuget.pkg.github.com/blastmanager/index.json
-    env:
-      DOTNET_CLI_TELEMETRY_OPTOUT: 1
-      VERSION: ${{ steps.version.outputs.version }}.${{ steps.version.outputs.increment }}
-      PACKAGE_VERSION: ${{ steps.version.outputs.version }}
