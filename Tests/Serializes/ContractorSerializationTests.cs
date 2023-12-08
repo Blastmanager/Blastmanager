@@ -13,6 +13,8 @@ public class ContractorSerializationTests
         var deserialize = JsonSerializer.Deserialize<GetProjectsResponse[]>(Json.GetProjectsJSON);
         // Assert
         Assert.NotNull(deserialize);
+        Assert.NotEmpty(deserialize);
+        Assert.Collection(deserialize, Assert.NotNull);
     }
 
     [Fact]
@@ -22,6 +24,8 @@ public class ContractorSerializationTests
         var deserialize = JsonSerializer.Deserialize<GetMisfireResponse[]>(Json.GetMisfireJSON);
         // Assert
         Assert.NotNull(deserialize);
+        Assert.NotEmpty(deserialize);
+        Assert.Collection(deserialize, Assert.NotNull);
     }
 
     [Fact]
@@ -31,5 +35,7 @@ public class ContractorSerializationTests
         var deserialize = JsonSerializer.Deserialize<BlastReportsResponse[]>(Json.GetBlastJSON);
         // Assert
         Assert.NotNull(deserialize);
+        Assert.NotEmpty(deserialize);
+        Assert.Collection(deserialize, Assert.NotNull);
     }
 }
