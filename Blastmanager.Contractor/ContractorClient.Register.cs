@@ -2,7 +2,7 @@
 using Blastmanager.Contractor.Entities;
 using Blastmanager.Contractor.Entities.Constants;
 using Blastmanager.Contractor.Entities.Interfaces;
-using Blastmanager.Entities;
+using Blastmanager.Entities.Configs;
 using Blastmanager.Entities.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 

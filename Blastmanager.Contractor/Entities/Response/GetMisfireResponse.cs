@@ -1,79 +1,34 @@
 ﻿namespace Blastmanager.Contractor.Entities.Response;
 
-public class GetMisfireResponse
+internal class GetMisfireResponse
 {
-    /// <summary>
-    /// Identifier for hole in BlastManager
-    /// </summary>
-    public int Id { get; init; }
-
-    /// <summary>
-    /// Time for when misfire was created in BlastManager
-    /// </summary>
-    public DateTime TimestampCreated { get; init; }
-
-    /// <summary>
-    /// Time for when misfire was found
-    /// </summary>
-    public DateTime TimestampFound { get; init; }
-
-    /// <summary>
-    /// Time for when misfire was last changed
-    /// </summary>
-    public DateTime TimestampLastChanged { get; init; }
-
-    /// <summary>
-    /// Identifier for misfire in BlastManager
-    /// </summary>
-    public int ProjectId { get; init; }
-
-    /// <summary>
-    /// Name of project
-    /// </summary>
-    public string ProjectName { get; init; } = null!;
-
-    /// <summary>
-    /// Intern project number
-    /// </summary>
-    public string ProjectNumber { get; init; } = null!;
-
-    /// <summary>
-    /// Number representation of the status
-    /// </summary>
-    public int StatusId { get; init; }
-
-    /// <summary>
-    /// Misfire status, 1 = Active, 2 = Neutral
-    /// </summary>
-    public string Status { get; init; } = null!;
-
-    /// <summary>
-    /// Reference to salve. Value is NULL if misfire is not associated with a blast
-    /// </summary>
-    public int? BlastId { get; init; }
-
-    /// <summary>
-    /// Amount of explosives (kg)
-    /// </summary>
-    public decimal? AmountExplosives { get; init; }
-
-    /// <summary>
-    /// Amount of detonators
-    /// </summary>
-    public decimal? AmountDetonators { get; init; }
-
-    /// <summary>
-    /// Amount of detonating cord (m)
-    /// </summary>
-    public decimal? AmountCord { get; init; }
-
-    /// <summary>
-    /// Amount of primers
-    /// </summary>
-    public decimal? AmountPrimers { get; init; }
-
-    /// <summary>
-    /// Source (ie. previous entry price)
-    /// </summary>
-    public string Source { get; init; } = null!;
+    public int Id { get; set; }
+    public DateTime TimestampCreated { get; set; }
+    public DateTime TimestampFound { get; set; }
+    public DateTime TimestampLastChanged { get; set; }
+    public decimal? Northing { get; set; }
+    public decimal? Easting { get; set; }
+    public int ProjectId { get; set; }
+    public string ProjectName { get; set; } = null!;
+    public string ProjectNumber { get; set; } = null!;
+    public int StatusId { get; set; }
+    public string Status { get; set; } = null!;
+    public int? BlastId { get; set; }
+    public decimal? AmountExplosives { get; set; }
+    public decimal? AmountDetonators { get; set; }
+    public decimal? AmountCord { get; set; }
+    public decimal? AmountPrimers { get; set; }
+    public string Source { get; set; } = null!;
+    public string ReportedAuthority { get; set; }
+    public string DetonatorType { get; set; }
+    public string ExplosiveTypes { get; set; }
+    public string PotentialReasons { get; set; }
+    public string Primer { get; set; }
+    public string Comment { get; set; }
+    public string MisfireContent { get; set; }
+    public string FixedHow { get; set; }
+    public string ReasonText { get; set; }
+    public string FixedHowText { get; set; }
+    public string BlastType { get; set; }
+    public string FoundHow { get; set; }
 }

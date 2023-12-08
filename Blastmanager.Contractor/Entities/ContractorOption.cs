@@ -1,4 +1,4 @@
-﻿using Blastmanager.Entities;
+﻿using Blastmanager.Entities.Configs;
 
 namespace Blastmanager.Contractor.Entities;
 

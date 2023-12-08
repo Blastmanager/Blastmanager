@@ -1,5 +1,4 @@
-﻿using Blastmanager.Contractor.Entities.Response;
-using Blastmanager.Entities.Interfaces;
+﻿using Blastmanager.Entities.Interfaces;
 
 namespace Blastmanager.Contractor.Entities.Interfaces;
 
@@ -12,7 +11,7 @@ public interface IContractorClient : IBaseClient
     /// <param name="onlyActive"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<GetProjectsResponse[]> GetProjectsAsync(bool onlyActive, CancellationToken cancellationToken = default);
+    Task<Project[]?> GetProjectsAsync(bool onlyActive, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// </summary>
@@ -20,7 +19,7 @@ public interface IContractorClient : IBaseClient
     /// <param name="to"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<BlastReportsResponse[]> GetBlastReportsByBlastDateAsync(DateTime from, DateTime to,
+    Task<BlastReport[]?> GetBlastReportsByBlastDateAsync(DateTime from, DateTime to,
             CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -29,7 +28,7 @@ public interface IContractorClient : IBaseClient
     /// <param name="to"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<BlastReportsResponse[]> GetBlastReportsByLastChangedAsync(DateTime from, DateTime to,
+    Task<BlastReport[]?> GetBlastReportsByLastChangedAsync(DateTime from, DateTime to,
             CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -38,7 +37,7 @@ public interface IContractorClient : IBaseClient
     /// <param name="to"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<GetMisfireResponse[]> GetMisfiresByLastChangedAsync(DateTime from, DateTime to,
+    Task<Misfire[]?> GetMisfiresByLastChangedAsync(DateTime from, DateTime to,
             CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -47,6 +46,6 @@ public interface IContractorClient : IBaseClient
     /// <param name="to"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<GetMisfireResponse[]> GetMisfiresByFoundDateAsync(DateTime from, DateTime to,
+    Task<Misfire[]?> GetMisfiresByFoundDateAsync(DateTime from, DateTime to,
             CancellationToken cancellationToken = default);
 }
