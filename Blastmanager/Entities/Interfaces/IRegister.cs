@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Blastmanager.Entities.Configs;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Blastmanager.Entities.Interfaces;
 

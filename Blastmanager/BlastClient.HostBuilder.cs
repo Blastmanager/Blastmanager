@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using Blastmanager.Entities;
+using Blastmanager.Entities.Configs;
 using Blastmanager.Entities.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -12,8 +12,10 @@ public static class BlastClientHostBuilder
     /// </summary>
     /// <param name="builder"></param>
     /// <param name="configure"></param>
-    /// <exception cref="NullReferenceException">When no clients have been installed,
-    /// or there's no referenced assemblies</exception>
+    /// <exception cref="NullReferenceException">
+    /// When no clients have been installed,
+    /// or there's no referenced assemblies
+    /// </exception>
     public static void AddBlastManager(this IServiceCollection builder, Action<BlastManagerConfig> configure)
     {
         var types = Assembly.GetEntryAssembly()?.GetReferencedAssemblies();
